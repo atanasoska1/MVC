@@ -3,12 +3,10 @@
     ViewBag.Title = "Index";
 }
 
-<script src="~/Scripts/jquery-1.12.4.min.js"></script>
-<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
 <script type="text/javascript">
     $(document).ready(function () {
-        DateTimePicker();
+
         $("#btnSave").click(function () {
 
             if (!$("#formCustomerBooking").valid()) {
@@ -24,7 +22,7 @@
     });
 
     function DateTimePicker() {
-       
+
 
         $('.datepicker').datepicker({
             dateFormat: 'dd-M-yy',
@@ -151,7 +149,16 @@
                             </div>
                             <div class="form-group col-md-3">
                                 @Html.LabelFor(model => model.BookingFrom, new { @class = "control-label" })
-                                @Html.EditorFor(model => model.BookingFrom, new { htmlAttributes = new { @readonly = "true", Value = Model.BookingFrom.ToString("dd-MMM-yyyy"), @class = "form-control datepicker", id = "txtBookingFrom" } })
+                                @Html.EditorFor(model => model.BookingFrom, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @readonly = true,
+                                        value = @Model.BookingFrom,
+                                        @id = "txtBookingFrom",
+                                        @class = "form-control datepicker"
+                                    }
+                                })
                                 @Html.ValidationMessageFor(model => model.BookingFrom, null, new { @class = "text-danger" })
                             </div>
 
@@ -159,7 +166,16 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 @Html.LabelFor(model => model.BookingTo, new { @class = "control-label" })
-                                @Html.EditorFor(model => model.BookingTo, new { htmlAttributes = new { @readonly = "true", Value = Model.BookingTo.ToString("dd-MMM-yyyy"), @class = "form-control datepicker", id = "txtBookingTo" } })
+                                @Html.EditorFor(model => model.BookingTo, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @readonly = true,
+                                        value = @Model.BookingTo,
+                                        @id = "txtBookingTo",
+                                        @class = "form-control datepicker"
+                                    }
+                                })
                                 @Html.ValidationMessageFor(model => model.BookingTo, null, new { @class = "text-danger" })
                             </div>
                             <div class="form-group col-md-3">
@@ -196,6 +212,26 @@
 </div>
 <div style="margin-top:10px"></div>
 <div id="divBookingHistory"></div>
+
+@section scripts{
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.datepicker').datepicker({
+                dateFormat: 'dd-M-yy',
+                changeMonth: true,
+                changeYear: true,
+                showOn: 'both',
+                sideBySide: true,
+                controlType: 'select',
+                buttonText: '<span class="glyphicon glyphicon-calendar"></span>',
+                minDate: new Date()
+            });
+        });
+    </script>
+}
 
 
 
