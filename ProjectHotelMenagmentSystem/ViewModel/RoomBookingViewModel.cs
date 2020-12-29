@@ -13,7 +13,7 @@ namespace ProjectHotelMenagmentSystem.ViewModel
         public string CustomerAddress { get; set; }
         public string CustomerPhone { get; set; }
         public DateTime BookingFrom { get; set; }
-        
+
         public decimal RoomPrice { get; set; }
         public DateTime BookingTo { get; set; }
         public string RoomNumber { get; set; }

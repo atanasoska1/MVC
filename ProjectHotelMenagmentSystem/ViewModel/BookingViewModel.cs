@@ -24,13 +24,13 @@ namespace ProjectHotelMenagmentSystem.ViewModel
         [Display(Name = "Booking From")]
         //[DataType(DataType.Date)]
         [Required(ErrorMessage = "Booking from is required.")]
-        //[DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode =true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode =true)]
         public DateTime BookingFrom  { get; set; }
 
         [Display(Name = "Booking To")]
         //[DataType(DataType.Date)]
         [Required(ErrorMessage = "Booking to is required.")]
-        //[DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime BookingTo { get; set; }
 
         [Display(Name = "Assign Room")]

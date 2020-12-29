@@ -31,5 +31,6 @@ namespace ProjectHotelMenagmentSystem.Models
         public virtual DbSet<BookingStatu> BookingStatus { get; set; }
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<RoomType> RoomTypes { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

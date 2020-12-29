@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="HotelDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Payments">
     <Key>
       <PropertyRef Name="PaymentId" />
@@ -17,6 +27,7 @@
     <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CustomerName" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="CustomerAddress" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="CustomerPhone" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="BookingFrom" Type="date" Nullable="false" />
     <Property Name="BookingTo" Type="date" Nullable="false" />
     <Property Name="AssignRoomId" Type="int" Nullable="false" />
@@ -59,6 +70,7 @@
     <Property Name="RoomTypeName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityContainer Name="HotelDBModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payments" EntityType="Self.Payments" Schema="Hotel" store:Type="Tables" />
     <EntitySet Name="RoomBookings" EntityType="Self.RoomBookings" Schema="Hotel" store:Type="Tables" />
     <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="Hotel" store:Type="Tables" />

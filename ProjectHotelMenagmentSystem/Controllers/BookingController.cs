@@ -84,12 +84,12 @@ namespace ProjectHotelMenagmentSystem.Controllers
                                            NumberOfMembers = objHotelBooking.NoOfMembers,
                                            BookingId = objHotelBooking.BookingId,
                                            RoomNumber = objRoom.RoomNumber,
-                                           RoomPrice=objRoom.RoomPrice,
-                                           NumberOfDays = System.Data.Entity.DbFunctions.DiffDays(objHotelBooking.BookingFrom,objHotelBooking.BookingTo).Value
+                                           RoomPrice = objRoom.RoomPrice,
+                                           NumberOfDays = System.Data.Entity.DbFunctions.DiffDays(objHotelBooking.BookingFrom, objHotelBooking.BookingTo).Value
 
 
                                        }).ToList();
-                                       
+
             return PartialView("_BookingHistoryPartial", listOfBookingViewModels);
 
 

@@ -12,16 +12,12 @@ namespace ProjectHotelMenagmentSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RoomBooking
+    public partial class sysdiagram
     {
-        public int BookingId { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerAddress { get; set; }
-        public System.DateTime BookingFrom { get; set; }
-        public System.DateTime BookingTo { get; set; }
-        public int AssignRoomId { get; set; }
-        public int NoOfMembers { get; set; }
-        public decimal TotalAmount { get; set; }
-        public string CustomerPhone { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

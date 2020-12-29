@@ -22,6 +22,7 @@
     <Property Name="AssignRoomId" Type="Int32" Nullable="false" />
     <Property Name="NoOfMembers" Type="Int32" Nullable="false" />
     <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CustomerPhone" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Room">
     <Key>
@@ -58,6 +59,7 @@
     <EntitySet Name="BookingStatus" EntityType="Self.BookingStatu" />
     <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
     <EntitySet Name="RoomTypes" EntityType="HotelDBModel.RoomType" />
+    <EntitySet Name="sysdiagrams" EntityType="HotelDBModel.sysdiagram" />
   </EntityContainer>
   <EntityType Name="RoomType">
     <Key>
@@ -65,5 +67,15 @@
     </Key>
     <Property Name="RoomTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RoomTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
 </Schema>
